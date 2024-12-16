@@ -1,0 +1,141 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text for dark theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    width: 100%; /* Full width for smaller screens */
+    max-width: 400px; /* Mimics mobile device size */
+    margin: 20px;
+    padding: 20px;
+    background-color: #1e1e1e; /* Slightly lighter dark for the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+    position: relative;
+}
+
+/* Back Button */
+.back-button {
+    text-decoration: none;
+    font-size: 20px;
+    color: #4CAF50;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    color: #76c893;
+    transform: scale(1.1);
+}
+
+/* Title and Description */
+h1 {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+    color: #cfcfcf; /* Softer white for text */
+}
+
+/* Recovery Grid */
+.recovery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.recovery-column {
+    flex: 1;
+}
+
+.recovery-item {
+    display: flex;
+    align-items: center;
+    width: calc(50% - 10px); /* Two inputs per row */
+    margin-bottom: 10px;
+}
+
+.number {
+    margin-right: 10px;
+    font-size: 14px;
+    color: #76c893; /* Accent color for numbers */
+}
+
+.word-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #2a2a2a; /* Dark input background */
+    color: #ffffff;
+}
+
+.word-input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 4px rgba(76, 175, 80, 0.6);
+}
+
+/* Submit Button */
+button#submitButton {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button#submitButton:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Reduce margin for smaller screens */
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .recovery-item {
+        width: 100%; /* Full-width inputs on smaller devices */
+    }
+
+    .back-button {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallet Page</title>
+  <link rel="stylesheet" href="style(Wallet).css">
+</head>
+<body>
+  <div class="wallet-container">
+    <!-- Top Bar -->
+    <div class="header">
+      <div class="logo-area">
+      </div>
+      <button class="settings-btn" onclick="window.location.href='index(Setting).html'">⚙️</button>
+    </div>
+
+    <!-- Wallet Balance Section -->
+    <div class="balance-section">
+      <h2>Wallets</h2>
+      <p class="balance">$0</p>
+      <p class="updated-time">Updated <span id="update-time">17 Nov 2024, 18:07</span></p>
+    </div>
+
+    <!-- Actions Section -->
+    <div class="actions">
+      <div class="action-btn" onclick="window.location.href='index(Send).html'">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\Send Icon.svg" alt="Send" class="action-icon"> Send
+      </div>
+      <div class="action-btn" onclick="window.location.href='index(receive).html'">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\Receive Icon.svg" alt="Receive" class="action-icon"> Receive
+      </div>
+      <div class="action-btn" onclick="window.location.href='index(Scan).html'">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\Scan Icon.png" alt="Scan" class="action-icon"> Scan
+      </div>
+      <div class="action-btn" onclick="window.location.href='index(Swap).html'">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\Swap Icon.svg" alt="Swap" class="action-icon"> Swap
+      </div>
+      <div class="action-btn" onclick="window.location.href='index(Buy).html'">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\Buy & Sell Icon.svg" alt="Buy" class="action-icon"> Buy or Sell
+      </div>
+      <div class="action-btn" onclick="window.location.href='index(Stake).html'">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\Stake Icon.svg" alt="Stake" class="action-icon"> Stake
+      </div>
+    </div>
+
+    <!-- Setup Section -->
+    <div class="setup-section">
+      <p>Finish setting up</p>
+      <div class="setup-item" onclick="window.location.href='notifications.html'">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\Notification Icon.png" alt="Notification" class="setup-icon">
+        Enable transaction notifications
+      </div>
+      <div class="setup-item">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\Telegram Logo.svg" alt="Channel" class="setup-icon">
+        Join 
+        <a href="https://t.me/tonkeeper" target="_blank" class="highlight">Tonkeeper Channel</a>
+      </div>
+      <div class="setup-item" onclick="window.location.href='rewards.html'">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\task Logo.svg" alt="Task" class="setup-icon">
+        Rewards task list
+      </div>
+    </div>
+
+    <!-- Token List -->
+    <div class="token-list">
+      <div class="token" onclick="window.open('https://www.coingecko.com/en/coins/toncoin', '_blank')">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\Ton Icon Logo.png" alt="TON" class="token-icon">
+        <span class="token-name">TON</span>
+        <span class="token-amount" id="ton-price">$0</span>
+      </div>
+      <div class="token" onclick="window.open('https://www.coingecko.com/en/coins/tether', '_blank')">
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\USDT icon.png" alt="USDT" class="token-icon">
+        <span class="token-name">USDT</span>
+        <span class="token-amount" id="usdt-price">$0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Script for Live Price Updates -->
+  <script>
+    // Function to fetch real-time prices for TON and USDT
+    async function fetchPrices() {
+      try {
+        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=toncoin,tether&vs_currencies=usd');
+        const data = await response.json();
+        document.getElementById('ton-price').innerText = `$${data.toncoin.usd}`;
+        document.getElementById('usdt-price').innerText = `$${data.tether.usd}`;
+      } catch (error) {
+        console.error('Error fetching prices:', error);
+      }
+    }
+
+    // Fetch prices on page load
+    fetchPrices();
+
+    // Update prices every 60 seconds
+    setInterval(fetchPrices, 60000);
+  </script>
+</body>
+</html>

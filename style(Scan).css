@@ -1,0 +1,75 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    background-color: #161a20;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Go Back Button */
+.go-back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #2a2f38;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.go-back-button:hover {
+    background-color: #4aa3f0;
+}
+
+/* Header */
+.header {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Video Preview */
+.video-container {
+    width: 100%;
+    height: 250px;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Instructions */
+.instruction {
+    font-size: 14px;
+    color: #9ca3af;
+}

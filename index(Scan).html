@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan QR Code</title>
+    <link rel="stylesheet" href="style(Scan).css">
+</head>
+<body>
+    <div class="container">
+        <!-- Go Back Button -->
+        <button class="go-back-button" onclick="window.location.href='index(Wallet).html'">←</button>
+
+        <h1 class="header">Scan QR Code</h1>
+
+        <!-- Video Preview -->
+        <div class="video-container">
+            <video id="video" autoplay></video>
+        </div>
+
+        <p class="instruction">Point your camera at a QR code to scan.</p>
+    </div>
+
+    <script>
+        // Access the camera
+        document.addEventListener("DOMContentLoaded", () => {
+            const video = document.getElementById("video");
+
+            // Request camera access
+            navigator.mediaDevices
+                .getUserMedia({ video: { facingMode: "environment" } }) // Rear camera
+                .then((stream) => {
+                    video.srcObject = stream;
+                    video.play();
+                })
+                .catch((error) => {
+                    console.error("Camera access error:", error);
+                    alert("Unable to access the camera. Please allow camera permissions and try again.");
+                });
+        });
+    </script>
+</body>
+</html>

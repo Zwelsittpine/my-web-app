@@ -1,0 +1,73 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #2f3136;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container styles */
+  .container {
+    text-align: center;
+    background-color: #39404d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  /* Header styles */
+  .header h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .header p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #b0b3b8;
+  }
+  
+  /* Button styles */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+  }
+  
+  /* Yes Button */
+  .yes-button {
+    background-color: #4caf50;
+    color: #ffffff;
+  }
+  
+  .yes-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  /* No Button */
+  .no-button {
+    background-color: #f44336;
+    color: #ffffff;
+  }
+  
+  .no-button:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+  }
+  

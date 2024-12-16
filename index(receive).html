@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receive Toncoin</title>
+  <link rel="stylesheet" href="style(receive).css">
+</head>
+<body>
+  <div class="receive-container">
+    <!-- Header Section with Back Button -->
+    <div class="header">
+      <a href="index(Wallet).html" class="back-button">⬅</a> <!-- Link to the main wallet page -->
+      <h1>Receive Toncoin</h1>
+    </div>
+
+    <!-- QR Code and Address Section -->
+    <div class="receive-section">
+      <p>Send only Toncoin and tokens in TON network to this address, or you might lose your funds.</p>
+      <div class="qr-code">
+        <!-- Replace 'qr-code.png' with your QR code image -->
+        <img src="C:\Users\zwelsittpine\Desktop\Project 2\ton-keeper-web-app\assets\Receive QR Code.png" alt="QR Code" class="qr-image">
+      </div>
+      <p class="receive-address" id="receiveAddress">
+        UQC23fSMsq3g_O2QTSLPqW8yT5bdXuqwcB-DaNjpwWnDNvIt
+      </p>
+      <button class="copy-button" onclick="copyAddress()">Copy</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to copy the address
+    function copyAddress() {
+      const address = document.getElementById("receiveAddress").textContent;
+      navigator.clipboard.writeText(address).then(() => {
+        alert("Address copied to clipboard!");
+      }).catch(err => {
+        alert("Failed to copy: " + err);
+      });
+    }
+  </script>
+</body>
+</html>

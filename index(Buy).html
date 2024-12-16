@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tokens</title>
+    <link rel="stylesheet" href="style(Buy).css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <button id="go-back-button" class="go-back-button" onclick="window.location.href='index(Wallet).html'">← Go Back</button>
+            <h1>Buy Tokens</h1>
+        </div>
+
+        <div class="content-container">
+            <button id="buy-button" class="buy-button">Buy Tokens</button>
+            <div id="website-links" class="links-container hidden">
+                <a href="https://www.binance.com/" target="_blank" class="website-link">
+                    <div class="link-button">Binance</div>
+                </a>
+                <a href="https://www.coinbase.com/" target="_blank" class="website-link">
+                    <div class="link-button">Coinbase</div>
+                </a>
+                <a href="https://www.kraken.com/" target="_blank" class="website-link">
+                    <div class="link-button">Kraken</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for toggling visibility of links
+        document.getElementById('buy-button').addEventListener('click', function () {
+            const linksContainer = document.getElementById('website-links');
+            linksContainer.classList.toggle('hidden');
+        });
+
+        // JavaScript for Go Back Button
+        document.getElementById('go-back-button').addEventListener('click', function () {
+            history.back();
+        });
+    </script>
+</body>
+</html>

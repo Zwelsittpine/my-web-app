@@ -1,0 +1,90 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    background-color: #1c1f2b;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 400px;
+    padding: 25px;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #4aa3f0;
+    margin-bottom: 15px;
+}
+
+.greeting-message,
+.gift-note {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.highlight-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #f0b541;
+    margin-bottom: 20px;
+}
+
+.gift-list {
+    list-style-type: none;
+    margin: 20px 0;
+}
+
+.gift-list li {
+    background-color: #292e3b;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    font-size: 1em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.gift-list li span {
+    color: #4aa3f0;
+    font-weight: bold;
+}
+
+.next-button {
+    background-color: #4aa3f0;
+    color: #fff;
+    font-size: 1em;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.next-button:hover {
+    background-color: #357ac8;
+    transform: scale(1.05);
+}
+
+.greeting-box,
+.gift-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
